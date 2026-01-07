@@ -40,6 +40,11 @@
         var(--background) 20px,
         lightgray 21px
     );
+    line-height: 1.8;
+}
+
+#links li {
+    line-height: 1.2;
 }
 
 .box-container,
