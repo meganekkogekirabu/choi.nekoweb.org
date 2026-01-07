@@ -1,0 +1,36 @@
+let index = 1;
+
+function drag(el) {
+  var pos = [0, 0, 0, 0];
+  const header = el.firstElementChild;
+
+  function mousedown(e) {
+    e.preventDefault();
+    pos[3] = e.clientX;
+    pos[4] = e.clientY;
+    document.onmouseup = mouseup;
+    document.onmousemove = mousemove;
+  }
+
+  function mousemove(e) {
+    e.preventDefault();
+    pos[1] = pos[3] - e.clientX;
+    pos[2] = pos[4] - e.clientY;
+    pos[3] = e.clientX;
+    pos[4] = e.clientY;
+    el.style.top = el.offsetTop - pos[2] + "px";
+    el.style.left = el.offsetLeft - pos[1] + "px";
+    el.style.zIndex = index++;
+  }
+
+  function mouseup() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+
+  header.onmousedown = mousedown;
+}
+
+document.querySelectorAll(".draggable").forEach((el) => {
+  drag(el);
+});

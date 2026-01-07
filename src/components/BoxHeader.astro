@@ -1,0 +1,7 @@
+---
+const { title, wide } = Astro.props;
+---
+
+<div class={"box-header" + (wide ? " box-wide" : "")}>
+    <span>{title}</span>
+</div>

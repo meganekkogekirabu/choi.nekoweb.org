@@ -1,0 +1,44 @@
+:root {
+    --border: solid 1px oklch(67.02% 0.2462 356.4);
+    --background: oklch(99.42% 0.0248 109.29);
+    --pink-accent-1: oklch(84.53% 0.1343 331.41);
+    --pink-accent-2: oklch(77.82% 0.2017 332.57);
+    --pink-accent-3: oklch(97.49% 0.0065 208.78);
+    --pink-accent-4: oklch(89.81% 0.0944 326.33);
+    --blue-accent: oklch(92.31% 0.0585 324.26);
+    --gradient-background: linear-gradient(
+        90deg,
+        var(--pink-accent-4),
+        var(--background)
+    );
+}
+
+html {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    background: linear-gradient(
+        var(--pink-accent-3) 0%,
+        var(--blue-accent) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+* {
+    font-family: Zpix, sans-serif;
+}
+
+@font-face {
+    font-family: Zpix;
+    src: url("/fonts/zpix.ttf");
+}
+
+a {
+    text-decoration: none;
+    color: royalblue;
+}
+
+a:hover:not(:has(img)) {
+    text-decoration: underline;
+}

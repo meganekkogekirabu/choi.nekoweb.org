@@ -1,0 +1,15 @@
+---
+import BoxHeader from "./BoxHeader.astro";
+import "../styles/box.css";
+
+const { title, wide, id } = Astro.props;
+---
+
+<div class="box-wrapper" id={id}>
+    <div class="box draggable">
+        <BoxHeader title={title} wide={wide} />
+        <div class={"box-container" + (wide ? " box-wide" : "")}>
+            <slot />
+        </div>
+    </div>
+</div>

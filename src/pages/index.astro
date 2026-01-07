@@ -1,0 +1,135 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import Box from "../components/Box.astro";
+import "../styles/common.css";
+import "../styles/home.css";
+import "../styles/boxes.css";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/assets/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>美的主頁 :p</title>
+        <script>
+            /*
+        @licstart  The following is the entire license notice for the
+        JavaScript code in this page.
+
+        Copyright (C) 2026 Choi Madeleine
+
+        The JavaScript code in this page is free software: you can
+        redistribute it and/or modify it under the terms of the GNU
+        General Public License (GNU GPL) as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option)
+        any later version.  The code is distributed WITHOUT ANY WARRANTY;
+        without even the implied warranty of MERCHANTABILITY or FITNESS
+        FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+        As additional permission under GNU GPL version 3 section 7, you
+        may distribute non-source (e.g., minimized or compacted) forms of
+        that code without the copy of the GNU GPL normally required by
+        section 4, provided you include this license notice and a URL
+        through which recipients can access the Corresponding Source.
+
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+        */
+        </script>
+    </head>
+
+    <body>
+        <SiteHeader />
+        <div id="boxes">
+            <Box title="停止 :(" id="stop-pls" wide> 請別再搞砸了 :( </Box>
+            <Box title="本網站" id="this-website" wide>
+                這主要只是一個首頁，不計劃寫任何東西可是我可能會 :p
+                <br /><br />
+                我知道這個移動網站有點半吊子 T_T
+            </Box>
+            <div id="lazy">
+                <img
+                    src="/assets/home_konata.png"
+                    title="graphic design is my passion!"
+                />
+            </div>
+            <Box title="關於" id="about" wide>
+                我叫瑪德琳或者瑪迪
+                <br /><br />
+                我是巨大的書呆子
+                <br /><br />
+                我的母語是英文那要是我的中文不好的話對不起 T_T
+                <br /><br />
+                請叫我她或者他
+            </Box>
+            <Box title="音樂" id="listenbrainz-widget" wide>
+                <img id="album-art" />
+                <div id="listenbrainz-side">
+                    <small>正在聽</small>
+                    <h4 id="album-name" title="正在聽這張專輯">正在加載...</h4>
+                    <h4 id="album-artist" title="正在聽這位歌手的歌"></h4>
+                    <a
+                        href="https://github.com/meganekkogekirabu/listenbrainz-widget"
+                        target="_blank"
+                    >
+                        <small>源代碼</small>
+                    </a>
+                </div>
+            </Box>
+            <Box title="外部連結" id="links" wide>
+                <ul>
+                    <li>
+                        <a href="https://listenbrainz.org/user/janpasi/"
+                            >listenbrainz.org</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://en.pronouns.page/@saphj"
+                            >pronouns.page</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://meta.wikimedia.org/wiki/Special:CentralAuth/Saph"
+                            >meta.wikimedia.org</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://github.com/meganekkogekirabu"
+                            >github.com</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://discord.com/users/1405344638830645382"
+                            >discord.com</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://musicbrainz.org/user/janpasi"
+                            >musicbrainz.org</a
+                        >
+                    </li>
+                </ul>
+            </Box>
+            <Box title="語言" id="languages">
+                英文（母語）
+                <br /><br />
+                中文（TOCFL 2）
+            </Box>
+        </div>
+        <script src="/scripts/drag.js" is:inline></script>
+        <script src="/scripts/listenbrainz.js" is:inline></script>
+        <script is:inline>
+            document.querySelectorAll(".toggle").forEach((el) => {
+                el.addEventListener("click", (e) => {
+                    const parent = e.target.parentElement;
+                    parent.classList.toggle("expanded");
+                    parent.classList.toggle("collapsed");
+                });
+            });
+        </script>
+    </body>
+</html>

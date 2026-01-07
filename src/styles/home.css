@@ -1,0 +1,66 @@
+body {
+    width: 60em;
+    margin: auto;
+}
+
+.draggable {
+    position: absolute;
+}
+
+ul.tree,
+.tree ul {
+    list-style-type: none;
+}
+
+.toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsed > ul {
+    display: none;
+}
+
+.toggle::before {
+    content: "+ ";
+    color: green;
+    margin-right: 4px;
+}
+
+.expanded > .toggle::before {
+    content: "- ";
+    color: red;
+}
+
+#search-bar {
+    font-family: unset;
+    border: var(--border);
+    background-color: var(--background);
+}
+
+#search-bar:focus {
+    outline: 0;
+}
+
+#search-results {
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+#search-results > a {
+    padding: 5px;
+    position: absolute;
+    border: var(--border);
+    background-color: white;
+}
+
+#lazy {
+    display: inline-block;
+    height: 10.5em;
+    position: relative;
+    width: fit-content;
+}
+
+#lazy img {
+    width: 175px;
+}

@@ -1,0 +1,18 @@
+#header {
+    border: var(--border);
+    border-spacing: 0;
+    margin-bottom: 7px;
+    border-top: none;
+}
+
+#header td {
+    padding: 5px;
+}
+
+#header-top {
+    background: var(--gradient-background);
+}
+
+#header-bottom {
+    background: url("/assets/frame_bottom.png");
+}
