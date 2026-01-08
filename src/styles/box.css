@@ -16,6 +16,7 @@
         var(--pink-accent-2) 100%
     );
     border-bottom: none;
+    cursor: grab;
 }
 
 .box-header > span {
