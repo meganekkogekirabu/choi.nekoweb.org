@@ -11,6 +11,16 @@ execSync("pnpm run build", {
 
 const __dirname = import.meta.dirname;
 const dist = path.join(__dirname, "..", "dist");
+
+fs.rename(
+  path.join(dist, "404.html"),
+  path.join(dist, "not_found.html"),
+  (err) => {
+    if (err) throw err;
+    console.log("moved 404.html to not_found.html");
+  },
+);
+
 const dist_zip = path.join(__dirname, "..", "dist.zip");
 
 const zip = new AdmZip();
@@ -40,7 +50,7 @@ fs.unlink(dist_zip, (err) => {
   console.log("deleted dist.zip");
 });
 
-fs.rmdir(dist, (err) => {
+fs.rm(dist, { recursive: true, force: true }, (err) => {
   if (err) throw err;
   console.log("deleted dist/");
 });
