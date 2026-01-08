@@ -26,7 +26,7 @@
     background-position-y: center;
     padding-left: 31px;
     user-select: none;
-    cursor: default;
+    cursor: grab;
 }
 
 .box-container {
