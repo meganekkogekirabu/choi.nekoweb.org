@@ -121,16 +121,7 @@ import "../styles/boxes.css";
                 >meganekkogekirabu/choi.nekoweb.org</a
             >
         </p>
-        <script src="/scripts/drag.js" is:inline></script>
-        <script src="/scripts/listenbrainz.js" is:inline></script>
-        <script is:inline>
-            document.querySelectorAll(".toggle").forEach((el) => {
-                el.addEventListener("click", (e) => {
-                    const parent = e.target.parentElement;
-                    parent.classList.toggle("expanded");
-                    parent.classList.toggle("collapsed");
-                });
-            });
-        </script>
+        <script src="/scripts/drag.ts" is:inline></script>
+        <script src="/scripts/listenbrainz.ts" is:inline></script>
     </body>
 </html>
