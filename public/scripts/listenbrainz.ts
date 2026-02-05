@@ -1,14 +1,33 @@
-let config = {
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (C) 2026 Choi Madeleine
+
+interface Config {
+  username: string;
+}
+
+interface ActivityData {
+  "album-art": string;
+  "album-artist": string;
+  "album-name": string;
+}
+
+interface ListenMetadata {
+  additional_info: { release_mbid: string };
+  artist_name: string;
+  release_name: string;
+}
+
+let config: Config = {
   username: "janpasi",
 };
 
-function populate(data) {
+function populate(data: ActivityData) {
   for (const [k, v] of Object.entries(data)) {
     const el = document.getElementById(k);
 
     if (!el) throw new Error(`cannot find element with id #${k}`);
 
-    if (k === "album-art") el.src = v;
+    if (k === "album-art") (el as HTMLImageElement).src = v;
     else {
       el.textContent = v;
       if (el.scrollWidth > el.clientWidth) el.title = v;
@@ -16,7 +35,7 @@ function populate(data) {
   }
 }
 
-async function getListen(config) {
+async function getListen(config: Config) {
   const res = await fetch(
     `https://api.listenbrainz.org/1/user/${config.username}/listens`,
   );
@@ -28,7 +47,7 @@ async function getListen(config) {
   return data.payload.listens[0].track_metadata;
 }
 
-async function parseListen(listen) {
+async function parseListen(listen: ListenMetadata) {
   const art = await fetch(
     `https://coverartarchive.org/release/${listen.additional_info.release_mbid}`,
   )
