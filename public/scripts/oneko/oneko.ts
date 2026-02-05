@@ -91,7 +91,7 @@ function oneko() {
   };
 
   function init() {
-    let nekoFile = "./oneko.gif";
+    let nekoFile = "/assets/oneko.gif";
     const curScript = document.currentScript;
     if (curScript && curScript.dataset.cat) {
       nekoFile = curScript.dataset.cat;
