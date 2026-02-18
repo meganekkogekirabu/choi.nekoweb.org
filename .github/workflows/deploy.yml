@@ -32,7 +32,7 @@ jobs:
         run: pnpm build
 
       - name: Rename 404 file
-        run: mv build/404.html build/not_found.html
+        run: mv dist/404.html dist/not_found.html
 
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main
