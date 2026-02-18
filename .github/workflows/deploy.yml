@@ -31,6 +31,9 @@ jobs:
       - name: Build site
         run: pnpm build
 
+      - name: Rename 404 file
+        run: mv build/404.html build/not_found.html
+
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main
         with:
