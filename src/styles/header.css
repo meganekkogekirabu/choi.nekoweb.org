@@ -1,4 +1,5 @@
 #header {
+    image-rendering: pixelated;
     border: var(--border);
     border-spacing: 0;
     margin-bottom: 7px;

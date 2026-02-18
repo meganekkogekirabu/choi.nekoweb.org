@@ -20,6 +20,7 @@
 }
 
 .box-header > span {
+    image-rendering: pixelated;
     background-image: url("/assets/box_stars.png");
     background-origin: border-box;
     background-repeat: no-repeat;
